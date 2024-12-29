@@ -48,14 +48,17 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             md:block
             text-sm 
             font-semibold 
-            py-3 
+            py-4
             px-4 
-            rounded-full 
-            hover:bg-neutral-100 
+            rounded-lg
+            hover:bg-foreground-light 
             transition 
             cursor-pointer
-            border-[1px] 
-            shadow-md
+            border
+            border-foreground-light 
+            shadow-sm
+            bg-lime-600
+            hover:bg-lime-500
           "
         >
           Rent your stuff
@@ -63,24 +66,23 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         <div
           onClick={toggleOpen}
           className="
-          p-4
-          md:py-1
-          md:px-2
-          border-[1px] 
-          border-neutral-200 
+          p-2
+          md:py-2
+          md:px-3
+          border
+          border-foreground-light 
           flex 
           flex-row 
           items-center
-          hover:bg-neutral-100  
-          gap-3 
+          hover:bg-foreground-light 
+          gap-2 
           rounded-full 
           cursor-pointer
-          shadow-md 
-          hover:shadow-lg 
+          shadow-sm
           transition
           "
         >
-          <AiOutlineMenu />
+          {/* <AiOutlineMenu size={20} className="text-foreground" /> */}
           <div className="hidden md:block">
             <Avatar src={currentUser?.image} />
           </div>
@@ -91,17 +93,17 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           className="
             absolute 
             rounded-xl 
-            shadow-md
+            shadow-lg
             w-[40vw]
-            md:w-3/4 
-            bg-white 
+            md:w-56 
+            bg-background 
             overflow-hidden 
             right-0 
-            top-12 
+            top-16 
             text-sm
           "
         >
-          <div className="flex flex-col cursor-pointer">
+          <div className="flex flex-col cursor-pointer items-center">
             {currentUser ? (
               <>
                 <MenuItem

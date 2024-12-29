@@ -1,36 +1,36 @@
-import { Nunito } from 'next/font/google'
+import { Nunito } from "next/font/google";
 
-import Navbar from '@/app/components/navbar/Navbar';
-import LoginModal from '@/app/components/modals/LoginModal';
-import RegisterModal from '@/app/components/modals/RegisterModal';
-import SearchModal from '@/app/components/modals/SearchModal';
-import RentModal from '@/app/components/modals/RentModal';
+import Navbar from "@/app/components/navbar/Navbar";
+import LoginModal from "@/app/components/modals/LoginModal";
+import RegisterModal from "@/app/components/modals/RegisterModal";
+import SearchModal from "@/app/components/modals/SearchModal";
+import RentModal from "@/app/components/modals/RentModal";
 
-import ToasterProvider from '@/app/providers/ToasterProvider';
+import ToasterProvider from "@/app/providers/ToasterProvider";
 
-import './globals.css'
-import ClientOnly from './components/ClientOnly';
-import getCurrentUser from './actions/getCurrentUser';
-import Footer from '@/app/components/footer/footer';
+import "./globals.css";
+import ClientOnly from "./components/ClientOnly";
+import getCurrentUser from "./actions/getCurrentUser";
+import Footer from "@/app/components/footer/footer2";
 
 export const metadata = {
-  title: 'Rentpal',
-  description: 'Rent your stuff',
-}
+  title: "AGRI RENTAL",
+  description: "One stop for all the agri culture needs",
+};
 
-const font = Nunito({ 
-  subsets: ['latin'], 
+const font = Nunito({
+  subsets: ["latin"],
 });
 
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   const currentUser = await getCurrentUser();
 
   return (
-    <html lang="en" className='bg-white'>
+    <html lang="en" className="bg-white">
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />
@@ -39,14 +39,12 @@ export default async function RootLayout({
           <SearchModal />
           <RentModal />
           <Navbar currentUser={currentUser} />
-          
-          
         </ClientOnly>
-        <div className="pb-20 pt-28">
-          {children}
-        </div>
-        <Footer />
+        <div className="pb-20 pt-28">{children}</div>
+        <ClientOnly>
+          <Footer />
+        </ClientOnly>
       </body>
     </html>
-  )
+  );
 }

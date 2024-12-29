@@ -1,83 +1,87 @@
-'use client';
+"use client";
 
-import { usePathname, useSearchParams } from 'next/navigation';
-import { 
+import { usePathname, useSearchParams } from "next/navigation";
+import {
   GiGamepad,
   GiMusicalNotes,
   GiClothes,
   GiKitchenKnives,
-  GiWeightLiftingUp
-} from 'react-icons/gi';
-import { MdOutlineDevicesOther} from 'react-icons/md';
+  GiWeightLiftingUp,
+} from "react-icons/gi";
+import { MdOutlineDevicesOther } from "react-icons/md";
+import { BiParty, BiCamera, BiBook, BiCar } from "react-icons/bi";
+// import { Tractor, Axe, SprayCan, Vegan } from "lucide-react";
 import {
-  BiParty,
-  BiCamera,
-  BiBook,
-  BiCar
-} from 'react-icons/bi'
+  Tractor,
+  Pickaxe,
+  SprayCan,
+  Axe,
+  FireExtinguisher,
+  HandHelping,
+  Vegan,
+  Fence,
+  HelpingHand,
+} from "lucide-react";
 
 import CategoryBox from "../CategoryBox";
-import Container from '../Container';
-
+import Container from "../Container";
 
 export const categories = [
   {
-    label: 'Party and Events',
-    icon: BiParty,
-    description: 'Barbecue, Chairs & Sofas, Decoration, Food Booths, Lighting equipment, Tables, Tents, etc.',
+    label: "Tractors",
+    icon: Tractor,
+    description:
+      "High-efficiency tractors for all your farming needs, ensuring powerful performance and reliability.",
   },
   {
-    label: 'Gaming',
-    icon: GiGamepad,
-    description: 'Consoles, Games, Outdoor toys, Toys, Virtual Reality, etc.',
+    label: "Harvesters",
+    icon: Pickaxe,
+    description:
+      "Efficient harvesters to help you collect crops quickly and effectively, saving time and labor.",
   },
   {
-    label: 'Photography',
-    icon: BiCamera,
-    description: ' Photography Accesories, Cameras, Lens, Batteries, Case, etc.'
+    label: "Plows",
+    icon: Axe,
+    description:
+      "Durable plows for turning over the soil, preparing your fields for the next planting season.",
   },
   {
-    label: 'Music',
-    icon: GiMusicalNotes,
-    description: 'Music Accessories, Music Players, Musical Instruments, Sound Equipments, etc.'
+    label: "Sprayers",
+    icon: SprayCan,
+    description:
+      "Advanced sprayers for applying fertilizers, herbicides, and pesticides evenly across your crops.",
   },
   {
-    label: 'Clothing',
-    icon: GiClothes,
-    description: "Children's Clothing, Clothing Accessories(Sunglasses, Handbags, etc.), Men's Clothing, Women's Clothing, Costumes, Footware, etc."
+    label: "Irrigation",
+    icon: HandHelping,
+    description:
+      "Comprehensive irrigation systems to ensure your crops get the right amount of water.",
   },
   {
-    label: 'Kitchen',
-    icon: GiKitchenKnives,
-    description: 'Cookware, Cutlery, Kitchen Appliances, Tableware, Refrigerators, Microwave and Ovens, etc.'
+    label: "Seeders",
+    icon: Vegan,
+    description:
+      "Precision seeders for planting seeds efficiently and uniformly across large fields.",
   },
   {
-    label: 'Books',
-    icon: BiBook,
-    description: 'Fictional / Non-fictionl Novels, Comics, Manga, etc.'
+    label: "Fencing",
+    icon: Fence,
+    description:
+      "Robust fencing solutions to secure your farmland and livestock from intruders and predators.",
   },
   {
-    label: 'Transport',
-    icon: BiCar,
-    description: 'Bicycles, Scooters, Cars, Bikes, Skates, Skateboards, etc.'
+    label: "Wheelbarrows",
+    icon: FireExtinguisher,
+    description:
+      "Sturdy wheelbarrows for transporting materials and produce around your farm with ease.",
   },
-  {
-    label: 'Electronics',
-    icon: MdOutlineDevicesOther,
-    description: 'Computers, Grooming appliances, Laptops, Storage Devices, Mouse, Keyboard, Phones, Cables and accessories, etc.'
-  },
-  {
-    label: 'Fitness',
-    icon: GiWeightLiftingUp,
-    description: 'Gym Equipments, Massage chairs, Steamer, etc.'
-  },
-]
+];
 
 const Categories = () => {
   const params = useSearchParams();
-  const category = params?.get('category');
+  const category = params?.get("category");
   const pathname = usePathname();
-  const isMainPage = pathname === '/';
+  const isMainPage = pathname === "/";
 
   if (!isMainPage) {
     return null;
@@ -89,14 +93,16 @@ const Categories = () => {
         className="
           pt-4
           flex 
+          gap-8
+          mr-16
           flex-row 
           items-center 
-          justify-between
+          justify-center
           overflow-x-auto
         "
       >
         {categories.map((item) => (
-          <CategoryBox 
+          <CategoryBox
             key={item.label}
             label={item.label}
             icon={item.icon}
@@ -106,6 +112,6 @@ const Categories = () => {
       </div>
     </Container>
   );
-}
- 
+};
+
 export default Categories;

@@ -45,13 +45,10 @@ const BookingsClient: React.FC<BookingsClientProps> = ({
 
   return (
     <Container>
-      <Heading
-        title="Bookings"
-        subtitle="All of your bookings"
-      />
+      <Heading title="Bookings" subtitle="All of your bookings" />
       <div
         className="
-          mt-10
+          my-16
           grid 
           grid-cols-1 
           sm:grid-cols-2 

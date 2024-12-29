@@ -8,6 +8,7 @@ import { SafeUser } from "@/app/types";
 
 import Avatar from "../Avatar";
 import ListingCategory from "./ListingCategory";
+import { LucideIcon } from "lucide-react";
 
 const Map = dynamic(() => import("../Map"), {
   ssr: false,
@@ -19,7 +20,7 @@ interface ListingInfoProps {
   itemCount: number;
   category:
     | {
-        icon: IconType;
+        icon: LucideIcon;
         label: string;
         description: string;
       }
