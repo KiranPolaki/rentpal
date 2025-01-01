@@ -10,7 +10,6 @@ const nextConfig = {
       "lh3.googleusercontent.com",
     ],
   },
-  i18n: { defaultLocale: "en", locales: ["en", "te", "hi"] },
 };
 
 module.exports = nextConfig;
