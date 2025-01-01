@@ -54,15 +54,18 @@ const Search = () => {
     <div
       onClick={searchModal.onOpen}
       className="
-        border-[2px] 
+        border-[2px]
         w-full 
         md:w-auto 
-        py-2 
-        rounded-full 
+        py-2
+        px-12
+        rounded-lg 
         shadow-md 
         hover:shadow-lg
         transition 
         cursor-pointer
+        flex
+        justify-between
       "
     >
       <div
@@ -100,8 +103,7 @@ const Search = () => {
           className="
             text-sm 
             pl-6 
-            pr-2 
-            text-gray-600 
+            pr-2  
             flex 
             flex-row 
             items-center 
@@ -109,16 +111,15 @@ const Search = () => {
           "
         >
           <div className="hidden sm:block">{itemLabel}</div>
-          <div
-            className="
+        </div>
+        <div
+          className="
               p-2 
-              bg-rose-500 
               rounded-full 
-              text-white
+              text-black
             "
-          >
-            <BiSearch size={18} />
-          </div>
+        >
+          <BiSearch size={18} />
         </div>
       </div>
     </div>

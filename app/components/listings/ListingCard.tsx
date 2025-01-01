@@ -76,7 +76,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
       onClick={() => router.push(`/listings/${data.id}`)}
       className="col-span-1 cursor-pointer group"
     >
-      <div className="flex flex-col gap-2 w-full">
+      <div className="flex flex-col gap-2 w-full border-2 border-foreground/15 p-6 rounded-lg">
         <div
           className="
             aspect-square 
