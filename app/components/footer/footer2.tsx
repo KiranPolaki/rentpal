@@ -1,7 +1,11 @@
+"use client";
+import LanguageSwitcher from "@/components/languageSwitcher";
 import { FacebookIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <div className="relative">
       <div className="sticky bottom-0">

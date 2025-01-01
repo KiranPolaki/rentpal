@@ -12,6 +12,8 @@ import "./globals.css";
 import ClientOnly from "./components/ClientOnly";
 import getCurrentUser from "./actions/getCurrentUser";
 import Footer from "@/app/components/footer/footer2";
+import Button from "./components/Button";
+import { Bot } from "lucide-react";
 
 export const metadata = {
   title: "AGRI RENTAL",
@@ -31,7 +33,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="bg-white">
-      <body className={font.className}>
+      <body className={`${font.className} relative`}>
         <ClientOnly>
           <ToasterProvider />
           <LoginModal />
@@ -43,6 +45,9 @@ export default async function RootLayout({
         <div className="pb-20 pt-28">{children}</div>
         <ClientOnly>
           <Footer />
+          <button className="text-foreground absolute bottom-0 right-0">
+            <Bot />
+          </button>
         </ClientOnly>
       </body>
     </html>

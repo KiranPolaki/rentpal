@@ -5,11 +5,12 @@ const nextConfig = {
   },
   images: {
     domains: [
-      'res.cloudinary.com', 
-      'avatars.githubusercontent.com',
-      'lh3.googleusercontent.com'
-    ]
-  }
-}
+      "res.cloudinary.com",
+      "avatars.githubusercontent.com",
+      "lh3.googleusercontent.com",
+    ],
+  },
+  i18n: { defaultLocale: "en", locales: ["en", "te", "hi"] },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
