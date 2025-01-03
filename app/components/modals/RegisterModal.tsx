@@ -30,6 +30,7 @@ const RegisterModal = () => {
       name: "",
       email: "",
       password: "",
+      number: "",
     },
   });
 
@@ -79,6 +80,14 @@ const RegisterModal = () => {
         id="password"
         label="Password"
         type="password"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+      <Input
+        id="number"
+        label="Number"
         disabled={isLoading}
         register={register}
         errors={errors}
