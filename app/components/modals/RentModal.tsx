@@ -17,6 +17,7 @@ import { categories } from "../navbar/Categories";
 import ImageUpload from "../inputs/ImageUpload";
 import Input from "../inputs/Input";
 import Heading from "../Heading";
+import LocateMe from "../LocateMe";
 
 enum STEPS {
   CATEGORY = 0,
@@ -170,6 +171,7 @@ const RentModal = () => {
           title="Where is your item located?"
           subtitle="Help people find you!"
         />
+        <LocateMe />
         <CountrySelect
           value={location}
           onChange={(value) => setCustomValue("location", value)}
