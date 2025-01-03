@@ -8,7 +8,7 @@ import { SafeUser } from "@/app/types";
 
 import Avatar from "../Avatar";
 import ListingCategory from "./ListingCategory";
-import { LucideIcon } from "lucide-react";
+import { LucideIcon, PhoneCall } from "lucide-react";
 
 const Map = dynamic(() => import("../Map"), {
   ssr: false,
@@ -54,6 +54,11 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         >
           <div>Hosted by {user?.name}</div>
           <Avatar src={user?.image} />
+        </div>
+        <div className="flex gap-3">
+          <PhoneCall className="text-lime-600" />
+          <span className="font-bold">Call Now</span>
+          <span>{user?.number === null ? "+91 9951107710" : user?.number}</span>
         </div>
         <div
           className="
