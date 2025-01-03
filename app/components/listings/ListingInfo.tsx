@@ -58,7 +58,14 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         <div className="flex gap-3">
           <PhoneCall className="text-lime-600" />
           <span className="font-bold">Call Now</span>
-          <span>{user?.number === null ? "+91 9951107710" : user?.number}</span>
+          <a
+            href={`tel:+91${
+              user?.number === null ? "9951107710" : user?.number
+            }`}
+            id="callNumber"
+          >
+            {user?.number === null ? "+91 9951107710" : user?.number}
+          </a>
         </div>
         <div
           className="
